@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Học JavaScript từ con số 0</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Khung trang chính gồm header, nội dung bài học và quiz. -->
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Trang chủ JS Zero">
+        <span class="brand-mark">JS</span>
+        <span>JS Zero</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Điều hướng chính">
+        <a href="#lessons">Bài học</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+
+      <button class="menu-button" type="button" aria-label="Mở menu" data-menu-button>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <nav class="mobile-menu" aria-label="Menu mobile" data-mobile-menu>
+      <a href="#lessons">Bài học</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+
+    <main>
+      <section class="hero section" id="home">
+        <div class="hero-content">
+          <p class="eyebrow">Khóa học mini cho người mới bắt đầu</p>
+          <h1><span class="nowrap">Học JavaScript</span> từ con số 0</h1>
+          <p class="hero-text">
+            Đi từ khái niệm cơ bản, ví dụ ngắn đến bài tập thực hành. Mỗi bài học được chia nhỏ để bạn học chắc mà không bị ngợp.
+          </p>
+          <div class="hero-info">
+            <p>Intern: Huỳnh Anh Quốc</p>
+            <p>Mentor: Bùi Minh Trọng</p>
+          </div>
+          
+
+          <div class="hero-actions">
+            <a class="button primary" href="#lessons">Bắt đầu ngay</a>
+          </div>
+        </div>
+
+        <div class="code-visual" aria-label="Minh họa code JavaScript">
+          <div class="window-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <pre><code>const learner = {
+  level: "beginner",
+  focus: "build small apps"
+};
+
+console.log("Start small, learn well.");</code></pre>
+        </div>
+      </section>
+
+      <section class="section" id="lessons">
+        <div class="section-heading split">
+          <div>
+            <h2>Bài học</h2>
+          </div>
+          <label class="search-box">
+            <span>Tìm kiếm</span>
+            <input type="search" placeholder="Ví dụ: DOM, Array, Function..." data-search />
+          </label>
+        </div>
+
+        <div class="lesson-layout">
+          <div class="lesson-list" data-lesson-list></div>
+        </div>
+      </section>
+
+      <div class="lesson-modal" data-lesson-modal aria-hidden="true">
+        <div class="lesson-modal-backdrop" data-close-modal></div>
+        <div class="lesson-modal-panel" role="dialog" aria-modal="true" aria-label="Nội dung bài học">
+          <button class="modal-close" type="button" aria-label="Đóng bài học" data-close-modal>×</button>
+          <article class="lesson-detail" data-lesson-detail></article>
+        </div>
+      </div>
+
+      <section class="section" id="quiz">
+        <div class="section-heading">
+          <p class="eyebrow">Quiz nhanh</p>
+          <h2>Kiểm tra kiến thức nền tảng</h2>
+        </div>
+        <div class="quiz-box" data-quiz-box></div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Học ít nhưng hiểu chắc. Mỗi phần có ví dụ, mỗi bài học có thực hành.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
