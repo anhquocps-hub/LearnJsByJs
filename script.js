@@ -14,7 +14,7 @@ const lessons = [
         title: "Tại sao phải dùng JavaScript",
         problem: "Khi bắt đầu học web, bạn có thể thắc mắc: đã có HTML để tạo nội dung và CSS để làm giao diện, vậy tại sao vẫn cần học JavaScript?",
         content: "JavaScript được sử dụng phổ biến nhờ các lí do sau đây",
-        methods: [["Nhiều trình duyệt hỗ trợ", "JavaScript chạy sẵn trong hầu hết trình duyệt hiện đại."], ["Số 1 cho Front-end", "Các framework nổi tiếng hiện nay như React, Angular chủ yếu đều dựa vào JavaScript."], ["Hệ sinh thái lớn", "Có nhiều thư viện, framework và công cụ hỗ trợ để làm nhiều tác vụ khác nhau"], ["Dễ bắt đầu", "Không cần setup phức tạp để chạy những ví dụ đầu tiên."]],
+        methods: [["Nhiều trình duyệt hỗ trợ", "JavaScript chạy sẵn trong hầu hết trình duyệt hiện đại."], ["Số 1 cho Front-end", "Các framework nổi tiếng hiện nay như React, Angular chủ yếu đều dựa vào JavaScript."], ["Hệ sinh thái lớn", "Có nhiều thư viện và công cụ hỗ trợ để làm nhiều tác vụ khác nhau"], ["Dễ bắt đầu", "Không cần setup phức tạp để chạy những ví dụ đầu tiên."]],
         code: "// Các lý do khiến JavaScript được ưa chuộng:\nconst lyDo1 = '1. Chạy trên mọi trình duyệt hiện đại';\nconst lyDo2 = '2. Số 1 cho Front-end (React, Angular...)';\nconst lyDo3 = '3. Hệ sinh thái thư viện cực lớn';\nconst lyDo4 = '4. Rất dễ để bắt đầu học';\n\nconsole.log(lyDo1);\nconsole.log(lyDo2);\nconsole.log(lyDo3);\nconsole.log(lyDo4);",
         runnableCode: "// Các lý do khiến JavaScript được ưa chuộng:\nconst lyDo1 = '1. Chạy trên mọi trình duyệt hiện đại';\nconst lyDo2 = '2. Số 1 cho Front-end (React, Angular...)';\nconst lyDo3 = '3. Hệ sinh thái thư viện cực lớn';\nconst lyDo4 = '4. Rất dễ để bắt đầu học';\n\nconsole.log(lyDo1);\nconsole.log(lyDo2);\nconsole.log(lyDo3);\nconsole.log(lyDo4);"
       }
@@ -22,21 +22,15 @@ const lessons = [
     summary: "JavaScript giúp website có hành vi, biết xử lý dữ liệu và phản hồi người dùng."
   },
   {
-    title: "Cú pháp, Biến, kiểu dữ liệu",
+    title: "Biến và kiểu dữ liệu",
     sections: [
-      {
-        title: "Cú pháp là luật viết câu của JavaScript",
-        problem: "Giống tiếng Việt có dấu câu và thứ tự từ, JavaScript cũng có quy tắc để máy hiểu bạn muốn làm gì.",
-        content: "Một câu lệnh thường là một hành động nhỏ. Bạn có thể tạo dữ liệu, tính toán, so sánh hoặc in kết quả ra Console. Người mới không cần nhớ hết ngay, chỉ cần tập đọc code từ trái sang phải và hiểu từng dòng đang làm việc gì.",
-        code: "//đây là một comment\nconsole.log('Xin chào JavaScript');\nconsole.log(10 + 5);",
-        runnableCode: "console.log('Xin chào JavaScript');\nconsole.log(10 + 5);"
-      },
       {
         title: "Biến là chiếc hộp đặt tên",
         problem: "Khi cần nhớ tên người dùng, tuổi, điểm số hoặc trạng thái đăng nhập, bạn cần một nơi để cất dữ liệu.",
         content: "Biến giống một chiếc hộp có nhãn. Dùng const khi dữ liệu không đổi, dùng let khi dữ liệu có thể thay đổi. var là cách cũ, hiện tại ít sử dụng.",
-        code: "const usernameID = 'Quoc123';\nlet score = 8;\n\nscore = 9;\nconsole.log(username + ' có điểm ' + score);",
-        runnableCode: "const usernameID = 'Quoc123';\nlet score = 8;\n\nscore = 9;\nconsole.log(username + ' có điểm ' + score);"
+        methods: [["const", "Khai báo biến không gán lại giá trị mới."], ["let", "Khai báo biến có thể gán lại giá trị."], ["var", "Cách khai báo cũ, hiện tại ít dùng hơn let và const."], ["scope", "Phạm vi mà biến có thể được truy cập, ví dụ trong block, function hoặc toàn cục."]],
+        code: "const usernameID = 'Quoc123';\nlet score = 8;\n\nif (score >= 8) {\n  let rank = 'Giỏi';\n  console.log(rank);\n}\n\nscore = 9;\nconsole.log(usernameID + ' có điểm ' + score);",
+        runnableCode: "const usernameID = 'Quoc123';\nlet score = 8;\n\nif (score >= 8) {\n  let rank = 'Giỏi';\n  console.log('Xếp loại trong scope:', rank);\n}\n\nscore = 9;\nconsole.log(usernameID + ' có điểm ' + score);"
       },
       {
         title: "Primitive type là dữ liệu đơn giản",
@@ -50,12 +44,12 @@ const lessons = [
         title: "Reference type là dữ liệu tham chiếu",
         problem: "Primitive type là các kiểu đơn giản như string, number, boolean. Vậy những kiểu còn lại như object, array, function là kiểu dữ liệu gì? \nChúng thuộc Reference type, nghĩa là biến không giữ trực tiếp toàn bộ dữ liệu, mà giữ một tham chiếu trỏ tới dữ liệu đó.",
         content: "",
-        methods: [["Reference type", "Object, array, function thường được xử lý theo tham chiếu."], ["Gán bình thường", "Hai biến cùng trỏ tới một dữ liệu."], ["Sao chép nông", "Dùng spread để copy lớp ngoài."], ["Sao chép sâu", "Dùng structuredClone để copy cả dữ liệu lồng bên trong."], ["Lưu ý", "structuredClone không clone được mọi thứ, ví dụ function."]],
+        methods: [["Reference type", "Object, array, function thường được xử lý theo tham chiếu."], ["Gán bình thường", "Hai biến cùng trỏ tới một dữ liệu."], ["Sao chép nông", "Dùng dấu '=' để copy lớp ngoài."], ["Sao chép sâu", "Dùng structuredClone để copy cả dữ liệu lồng bên trong."], ["Lưu ý", "structuredClone không clone được mọi thứ, ví dụ function."]],
         code: "// 1. Tạo một object 1 tầng\nconst user1 = { name: 'Quốc', age: 20 };\n\n// 2. Gán thông thường (cùng trỏ vào một vùng nhớ)\nconst user2 = user1;\nuser2.name = 'Vỹ'; // Sửa user2 sẽ làm đổi user1 gốc\n\n// 3. Sao chép thực sự (tạo đối tượng mới bằng structuredClone)\nconst userCopy = structuredClone(user1);\nuserCopy.name = 'Nam'; // Đổi userCopy không ảnh hưởng user1\n\nconsole.log(user1);\nconsole.log(user2);\nconsole.log(userCopy);",
-        runnableCode: "// 1. Tạo một object 1 tầng\nconst user1 = { name: 'Quốc', age: 20 };\n\n// 2. Gán thông thường (cùng trỏ vào một vùng nhớ)\nconst user2 = user1;\nuser2.name = 'Vỹ'; // Sửa user2 sẽ làm đổi user1 gốc\n\n// 3. Sao chép thực sự (tạo đối tượng mới bằng structuredClone)\nconst userCopy = structuredClone(user1);\nuserCopy.name = 'Nam'; // Đổi userCopy không ảnh hưởng user1\n\nconsole.log('user1 gốc bị đổi tên thành Trọng:', user1);\nconsole.log('user2 cũng đổi tên tương tự:', user2);\nconsole.log('userCopy là đối tượng mới nên vẫn giữ tên Nam:', userCopy);"
+        runnableCode: "// 1. Tạo một object 1 tầng\nconst user1 = { name: 'Quốc', age: 20 };\n\n// 2. Gán thông thường (cùng trỏ vào một vùng nhớ)\nconst user2 = user1;\nuser2.name = 'Vỹ'; // Sửa user2 sẽ làm đổi user1 gốc\n\n// 3. Sao chép thực sự (tạo đối tượng mới bằng structuredClone)\nconst userCopy = structuredClone(user1);\nuserCopy.name = 'Nam'; // Đổi userCopy không ảnh hưởng user1\n\nconsole.log('user1 gốc bị đổi tên thành Vỹ:', user1);\nconsole.log('user2 cũng đổi tên tương tự:', user2);\nconsole.log('userCopy là đối tượng mới nên vẫn giữ tên Nam:', userCopy);"
       }
     ],
-    summary: "Cú pháp giúp máy hiểu lệnh, biến giúp lưu dữ liệu, kiểu dữ liệu giúp xử lý thông tin đúng cách."
+    summary: "Biến giúp lưu dữ liệu, kiểu dữ liệu giúp JavaScript xử lý thông tin đúng cách."
   },
   {
     title: "Object, Array và Function",
@@ -72,17 +66,17 @@ const lessons = [
         title: "Array lưu danh sách",
         problem: "Danh sách bài học, danh sách sản phẩm, danh sách bình luận đều là nhiều dữ liệu cùng nhóm.",
         content: "Array giúp lưu nhiều phần tử theo thứ tự. Khi làm việc với danh sách, bạn thường cần biến đổi dữ liệu. Vì vậy các method của Array rất quan trọng khi xử lý dữ liệu thực tế.",
-        methods: [["map()", "Biến đổi từng phần tử thành mảng mới."], ["filter()", "Lọc các phần tử thỏa điều kiện."], ["find()", "Tìm phần tử đầu tiên phù hợp."], ["some()", "Kiểm tra có ít nhất một phần tử thỏa điều kiện không."], ["every()", "Kiểm tra tất cả phần tử có thỏa điều kiện không."], ["flat()", "Làm phẳng mảng lồng nhau."], ["reduce()", "Gom danh sách thành một kết quả."], ["push()", "Thêm phần tử vào cuối mảng."], ["includes()", "Kiểm tra có chứa giá trị không."]],
-        code: "const scores = [4, 8, 10, 6];\nconst groups = [[1, 2], [3, 4]];\n\nconst passed = scores.filter(score => score >= 5);\nconst doubled = scores.map(score => score * 2);\nconst firstPerfect = scores.find(score => score === 10);\nconst hasFailed = scores.some(score => score < 5);\nconst allValid = scores.every(score => score >= 0);\nconst flatGroups = groups.flat();\nconst total = scores.reduce((sum, score) => sum + score, 0);\n\nconsole.log(passed);\nconsole.log(doubled);\nconsole.log(firstPerfect);\nconsole.log(hasFailed);\nconsole.log(allValid);\nconsole.log(flatGroups);\nconsole.log(total);",
-        runnableCode: "const scores = [4, 8, 10, 6];\nconst groups = [[1, 2], [3, 4]];\n\nconst passed = scores.filter(score => score >= 5);\nconst doubled = scores.map(score => score * 2);\nconst firstPerfect = scores.find(score => score === 10);\nconst hasFailed = scores.some(score => score < 5);\nconst allValid = scores.every(score => score >= 0);\nconst flatGroups = groups.flat();\nconst total = scores.reduce((sum, score) => sum + score, 0);\n\nconsole.log('Điểm đạt:', passed);\nconsole.log('Điểm nhân đôi:', doubled);\nconsole.log('Điểm 10 đầu tiên:', firstPerfect);\nconsole.log('Có điểm rớt không?', hasFailed);\nconsole.log('Tất cả điểm hợp lệ?', allValid);\nconsole.log('Mảng sau flat:', flatGroups);\nconsole.log('Tổng điểm:', total);"
+        methods: [["map()", "Biến đổi từng phần tử thành mảng mới."], ["filter()", "Lọc các phần tử thỏa điều kiện."], ["find()", "Tìm phần tử đầu tiên phù hợp."], ["push()", "Thêm phần tử vào cuối mảng."], ["unshift()", "Thêm phần tử vào đầu mảng."], ["shift()", "Lấy và xóa phần tử ở đầu mảng."], ["pop()", "Lấy và xóa phần tử ở cuối mảng."], ["includes()", "Kiểm tra có chứa giá trị không."]],
+        code: "const scores = [4, 8, 10, 6];\n\nconst doubled = scores.map(score => score * 2);\nconst passed = scores.filter(score => score >= 5);\nconst firstPerfect = scores.find(score => score === 10);\n\nscores.unshift(9);\nscores.push(7);\n\nconst firstScore = scores.shift();\nconst lastScore = scores.pop();\nconst hasTen = scores.includes(10);\n\nconsole.log(doubled);\nconsole.log(passed);\nconsole.log(firstPerfect);\nconsole.log(scores);\nconsole.log(firstScore);\nconsole.log(lastScore);\nconsole.log(hasTen);",
+        runnableCode: "const scores = [4, 8, 10, 6];\n\nconst doubled = scores.map(score => score * 2);\nconst passed = scores.filter(score => score >= 5);\nconst firstPerfect = scores.find(score => score === 10);\n\nscores.unshift(9);\nscores.push(7);\n\nconst firstScore = scores.shift();\nconst lastScore = scores.pop();\nconst hasTen = scores.includes(10);\n\nconsole.log('Điểm nhân đôi:', doubled);\nconsole.log('Điểm đạt:', passed);\nconsole.log('Điểm 10 đầu tiên:', firstPerfect);\nconsole.log('Mảng sau khi thêm và lấy phần tử:', scores);\nconsole.log('Phần tử lấy ở đầu:', firstScore);\nconsole.log('Phần tử lấy ở cuối:', lastScore);\nconsole.log('Có điểm 10 không?', hasTen);"
       },
       {
         title: "Function đóng gói một việc",
         problem: "Nếu một việc phải làm nhiều lần, bạn không nên viết lại code lặp đi lặp lại. Đặc biệt:",
         content: "Function là một khối xử lý. Nó có thể nhận dữ liệu đầu vào gọi là tham số, và trả kết quả bằng return.",
-        methods: [["Arrow function", "Cách viết function ngắn hơn."], ["Closure", "Function nhớ biến ở phạm vi bên ngoài."]],
-        code: "function tinhBinhPhuong(x) {\n  return x * x;\n}\n\nconst tinhBinhPhuongArrow = (x) => x * x;\n\nfunction taoBoDem() {\n  let count = 0;\n  return () => {\n    count += 1;\n    return count;\n  };\n}\n\nconst dem = taoBoDem();\nconsole.log(tinhBinhPhuong(5));\nconsole.log(tinhBinhPhuongArrow(5));\nconsole.log(dem());\nconsole.log(dem());",
-        runnableCode: "function tinhBinhPhuong(x) {\n  return x * x;\n}\n\nconst tinhBinhPhuongArrow = (x) => x * x;\n\nfunction taoBoDem() {\n  let count = 0;\n  return () => {\n    count += 1;\n    return count;\n  };\n}\n\nconst dem = taoBoDem();\nconsole.log('Bình phương (thường):', tinhBinhPhuong(5));\nconsole.log('Bình phương (arrow):', tinhBinhPhuongArrow(5));\nconsole.log('Closure - Lần 1:', dem());\nconsole.log('Closure - Lần 2:', dem());"
+        methods: [["Function declaration", "Khai báo function bằng từ khóa function."], ["Function expression", "Gán function vào một biến."], ["Arrow function", "Cách viết function ngắn hơn."], ["Closure", "Function nhớ biến ở phạm vi bên ngoài."]],
+        code: "function tinhBinhPhuong(x) {\n  return x * x;\n}\n\nconst tinhTong = function(a, b) {\n  return a + b;\n};\n\nconst tinhBinhPhuongArrow = (x) => x * x;\n\nfunction taoBoDem() {\n  let count = 0;\n  return () => {\n    count += 1;\n    return count;\n  };\n}\n\nconst dem = taoBoDem();\nconsole.log(tinhBinhPhuong(5));\nconsole.log(tinhTong(3, 4));\nconsole.log(tinhBinhPhuongArrow(5));\nconsole.log(dem());\nconsole.log(dem());",
+        runnableCode: "function tinhBinhPhuong(x) {\n  return x * x;\n}\n\nconst tinhTong = function(a, b) {\n  return a + b;\n};\n\nconst tinhBinhPhuongArrow = (x) => x * x;\n\nfunction taoBoDem() {\n  let count = 0;\n  return () => {\n    count += 1;\n    return count;\n  };\n}\n\nconst dem = taoBoDem();\nconsole.log('Bình phương (declaration):', tinhBinhPhuong(5));\nconsole.log('Tổng (expression):', tinhTong(3, 4));\nconsole.log('Bình phương (arrow):', tinhBinhPhuongArrow(5));\nconsole.log('Closure - Lần 1:', dem());\nconsole.log('Closure - Lần 2:', dem());"
       },
       {
         title: "Prototype, spread và rest nói đơn giản",
@@ -565,10 +559,6 @@ quizBox.addEventListener("click", event => {
 renderLessonList();
 renderLessonDetail();
 renderQuiz();
-
-
-
-
 
 
 
